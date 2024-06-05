@@ -1,0 +1,7 @@
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/All_DDL_scripts.sql'
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/customer.sql'
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/branch.sql'
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/account.sql'
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/accountcustomer.sql'
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/dailybalance.sql'
+\i 'C:/Users/cshet/OneDrive/Desktop/MiniBankSys_TAShip/All_Scripts/transaction.sql'

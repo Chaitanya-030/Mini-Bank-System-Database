@@ -1,0 +1,64 @@
+create schema test;
+set search_path to test;
+
+CREATE TABLE Customer (
+    CNO VARCHAR(10) PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Address VARCHAR(255),
+    email VARCHAR(50),
+    phone BIGINT,
+    CClass VARCHAR(20)
+);
+
+CREATE TABLE Branch (
+    BID VARCHAR(10) PRIMARY KEY,
+    Address VARCHAR(255),
+    City VARCHAR(20),
+    State VARCHAR(10),
+    Country VARCHAR(10),
+    IFSC VARCHAR(20),
+    MICR VARCHAR(20),
+    SWIFT VARCHAR(20)
+);
+
+CREATE TABLE Account (
+    AccountNo VARCHAR(10) PRIMARY KEY,
+    Type VARCHAR(20),
+    BID VARCHAR(10),
+    balance BIGINT NOT NULL,
+    FOREIGN KEY (BID) REFERENCES Branch(BID) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE transaction(
+   TID VARCHAR(10) PRIMARY KEY,
+   AccountNo VARCHAR(10) NOT NULL,
+   TS DATE  NOT NULL,
+   Description VARCHAR(50) NOT NULL,
+   CrDr CHAR(2) NOT NULL,
+   Amount BIGINT NOT NULL,
+   Balance BIGINT NOT NULL,
+   tr_type VARCHAR(20) NOT NULL,
+   cheqno BIGINT,
+   FOREIGN KEY (AccountNo) REFERENCES Account(AccountNo) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE DailyBalance(
+   AccountNo VARCHAR(10) NOT NULL,
+   Date DATE NOT NULL,
+   OB BIGINT NOT NULL,
+   CB BIGINT  NOT NULL,
+   PRIMARY KEY (AccountNo, Date),
+   FOREIGN KEY (AccountNo) REFERENCES Account(AccountNo) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+CREATE TABLE AccountCustomer(
+   AccountNo VARCHAR(10),
+   CNO VARCHAR(10),
+   PRIMARY KEY (AccountNo, CNO),
+   FOREIGN KEY (AccountNo) REFERENCES Account(AccountNo) ON DELETE SET NULL ON UPDATE CASCADE,
+   FOREIGN KEY (CNO) REFERENCES Customer(CNO) ON DELETE SET NULL ON UPDATE CASCADE
+);
+
+
+
+
