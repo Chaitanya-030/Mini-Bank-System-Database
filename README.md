@@ -10,7 +10,7 @@ This project not only delivered a functional database system but also empowered 
 
 *******************************************************************************************************************************************************************
 
-
+# Steps to run DDL commands and INSERT queries in one go : 
 Within the ALL_Scripts folder, there exists a master.sql file. To execute this file using the psql tool within a specific schema, use the command:
 
 \i <path_to_your_file/master.sql>
