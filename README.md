@@ -20,7 +20,7 @@ Executing this command will sequentially run all scripts referenced within the m
 
 *******************************************************************************************************************************************************************
 
-## Automate the running of queries wihtout opening PgAdmin : 
+## Automate the running of queries without opening PgAdmin : 
 By utilizing the psycopg2 library in Python, database queries can be executed directly through a Python script, bypassing the need to open pgAdmin. This method is especially beneficial in real banking systems where the same query must be run daily to obtain updated results. Additionally, creating a shortcut file (batch file) that triggers the Python script automatically upon execution streamlines the process, ensuring efficiency and consistency in accessing critical data.
 
 In the Automate_Running_Queries folder, you have been provided with a Python script and a batch file. By clicking on the batch file, it will trigger the Python script and run the specified query within the script, further simplifying the process of automating query execution. You can add the details of database like dbname, username, password and host as in your specific case.
